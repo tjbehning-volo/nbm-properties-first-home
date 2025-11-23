@@ -178,7 +178,7 @@ const Home = () => {
             <img 
               src={iowaLandscape} 
               alt="Eastern Iowa Landscape" 
-              className="rounded-lg shadow-2xl mx-auto"
+              className="rounded-lg shadow-2xl mx-auto w-full h-64 md:h-80 object-cover"
             />
           </div>
         </div>
