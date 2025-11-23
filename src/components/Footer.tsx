@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <img src={logoFullWhite} alt="NBM Properties" className="h-16 mb-4" />
+            <img src={logoFullWhite} alt="NBM Properties" className="h-12 md:h-16 w-auto mb-4" />
             <p className="text-sm opacity-90">
               Building quality, affordable homes for families and seniors in Eastern Iowa.
             </p>
