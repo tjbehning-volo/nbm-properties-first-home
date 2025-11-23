@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Bed, Bath, Square, MapPin, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroHome from "@/assets/hero-home.jpg";
-import interior1 from "@/assets/interior-1.jpg";
+import livingRoomFireplace from "@/assets/living-room-fireplace.jpg";
 import interior2 from "@/assets/interior-2.jpg";
 
 const Properties = () => {
@@ -59,20 +59,25 @@ const Properties = () => {
 
                 <p className="text-muted-foreground mb-6">
                   A beautifully designed single-story ranch perfect for seniors seeking accessible 
-                  living or families starting their homeownership journey. This spec home features 
-                  an open floor plan, modern finishes, and thoughtful details throughout.
+                  living or families starting their homeownership journey. New home construction without 
+                  the stress—pick your finishes and enjoy no property taxes for years. Just a few blocks 
+                  from downtown, this home features a semi-open floor plan, modern finishes, and 
+                  thoughtful details throughout.
                 </p>
 
                 <div className="space-y-2 mb-6">
                   <h3 className="font-semibold text-lg mb-3">Key Features:</h3>
                   {[
                     "Single-level living with no stairs",
-                    "Open concept kitchen and living area",
+                    "Semi-open concept kitchen and living area",
                     "Master suite with walk-in closet",
                     "Energy-efficient construction",
                     "Attached two-car garage",
                     "Low-maintenance exterior",
                     "Accessible design features",
+                    "Pick your finishes",
+                    "No property taxes for years",
+                    "Just a few blocks from downtown",
                   ].map((feature) => (
                     <div key={feature} className="flex items-start gap-2">
                       <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
@@ -95,14 +100,14 @@ const Properties = () => {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="relative overflow-hidden rounded-lg group">
               <img 
-                src={interior1} 
-                alt="Living Area" 
+                src={livingRoomFireplace} 
+                alt="Living Room with Fireplace" 
                 className="w-full h-80 object-cover transition-transform group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex items-end p-6">
                 <div>
-                  <h3 className="text-xl font-semibold mb-1">Open Living Space</h3>
-                  <p className="text-sm text-muted-foreground">Bright and welcoming main living area</p>
+                  <h3 className="text-xl font-semibold mb-1">Cozy Living Room</h3>
+                  <p className="text-sm text-muted-foreground">Comfortable space with gas fireplace</p>
                 </div>
               </div>
             </div>
