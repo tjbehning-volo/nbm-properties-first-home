@@ -37,7 +37,7 @@ const Properties = () => {
                 <CardTitle className="text-3xl mb-2">Modern Ranch Home</CardTitle>
                 <CardDescription className="text-lg flex items-center gap-2">
                   <MapPin className="w-4 h-4" />
-                  Eastern Iowa
+                  801 Locust St, Tipton, IA 52772
                 </CardDescription>
               </CardHeader>
 
