@@ -55,6 +55,10 @@ const Properties = () => {
                     <Bath className="w-5 h-5 text-primary" />
                     <span className="font-semibold">2 Bathrooms</span>
                   </div>
+                  <div className="flex items-center gap-2">
+                    <Square className="w-5 h-5 text-primary" />
+                    <span className="font-semibold">8,000 sq ft Corner Lot</span>
+                  </div>
                 </div>
 
                 <p className="text-muted-foreground mb-6">
@@ -70,6 +74,7 @@ const Properties = () => {
                   {[
                     "Single-level living with no stairs",
                     "Semi-open concept kitchen and living area",
+                    "Spacious 8,000 sq ft corner lot",
                     "Master suite with walk-in closet",
                     "Energy-efficient construction",
                     "Attached two-car garage",
