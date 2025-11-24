@@ -153,13 +153,15 @@ const Home = () => {
             <div className="order-1 md:order-2">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Partnered with Nissen Builders</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Our partnership with Nissen Builders brings unparalleled expertise to every project. 
-                With Michael Nissen's extensive experience in home construction through his framing 
-                company, we ensure every NBM property is built to the highest standards.
+                Our partnership with Nissen Builders brings exceptional craftsmanship and expertise to 
+                every project. The experienced team at Nissen Builders has built strong relationships 
+                with high-quality, local craftsmen throughout the region, ensuring superior workmanship 
+                while supporting the local community.
               </p>
               <p className="text-lg text-muted-foreground mb-8">
                 This collaboration combines our vision for affordable, thoughtful housing with proven 
-                construction excellence, creating homes that stand the test of time.
+                construction excellence and deep community roots, creating homes that stand the test 
+                of time while strengthening Eastern Iowa's skilled trades.
               </p>
             </div>
           </div>
