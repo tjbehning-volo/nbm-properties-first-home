@@ -16,10 +16,6 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {/* Contact Form */}
           <Card>
-            <CardHeader>
-              <CardTitle>Send Us a Message</CardTitle>
-              <CardDescription>Fill out the form below and we'll get back to you soon.</CardDescription>
-            </CardHeader>
             <CardContent className="p-0">
               <iframe 
                 src="https://docs.google.com/forms/d/e/1FAIpQLSch8HQ9msATSmI85dqurz1Vi1a3Wu49mLLoaB8gFf0FxWNyXg/viewform?embedded=true" 
