@@ -24,7 +24,7 @@ const Contact = () => {
               <iframe 
                 src="https://docs.google.com/forms/d/e/1FAIpQLSch8HQ9msATSmI85dqurz1Vi1a3Wu49mLLoaB8gFf0FxWNyXg/viewform?embedded=true" 
                 width="100%" 
-                height="780" 
+                height="980" 
                 frameBorder="0" 
                 marginHeight={0} 
                 marginWidth={0}
