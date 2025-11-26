@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import logoFullWhite from "@/assets/logo-full-white.png";
+import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 
 const Footer = () => {
   return (
@@ -22,7 +23,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                <span className="text-sm">info@nbmhomes.com</span>
+                <ObfuscatedEmail className="text-sm" />
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
