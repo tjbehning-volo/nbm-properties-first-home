@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Home as HomeIcon, Users, Award, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroHome from "@/assets/hero-home.jpg";
+import ranchExterior from "@/assets/ranch-exterior.jpg";
 import iowaLandscape from "@/assets/iowa-landscape.jpg";
 import construction from "@/assets/construction.jpg";
 
@@ -13,7 +13,7 @@ const Home = () => {
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroHome})` }}
+          style={{ backgroundImage: `url(${ranchExterior})` }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 to-background/60" />
         </div>
@@ -130,7 +130,7 @@ const Home = () => {
             </div>
             <div className="relative">
               <img 
-                src={heroHome} 
+                src={ranchExterior} 
                 alt="Featured Property" 
                 className="rounded-lg shadow-2xl"
               />

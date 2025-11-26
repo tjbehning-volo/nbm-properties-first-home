@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Bed, Bath, Square, MapPin, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroHome from "@/assets/hero-home.jpg";
+import ranchExterior from "@/assets/ranch-exterior.jpg";
 import livingRoomFireplace from "@/assets/living-room-fireplace.jpg";
 import interior2 from "@/assets/interior-2.jpg";
 
@@ -23,7 +23,7 @@ const Properties = () => {
           <div className="grid md:grid-cols-2">
             <div className="relative h-64 md:h-auto">
               <img 
-                src={heroHome} 
+                src={ranchExterior} 
                 alt="Ranch Home Exterior" 
                 className="w-full h-full object-cover"
               />
