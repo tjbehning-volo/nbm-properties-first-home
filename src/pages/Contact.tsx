@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
+import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 
 const Contact = () => {
 
@@ -57,9 +58,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <p className="text-muted-foreground">
-                      info@nbmhomes.com
-                    </p>
+                    <ObfuscatedEmail className="text-muted-foreground" />
                   </div>
                 </div>
 
