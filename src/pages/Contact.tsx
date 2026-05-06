@@ -1,11 +1,16 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
 import ObfuscatedEmail from "@/components/ObfuscatedEmail";
+import SEO from "@/components/SEO";
 
 const Contact = () => {
 
   return (
     <div className="min-h-screen py-20">
+      <SEO
+        title="Contact Us | NBM Properties"
+        description="Get in touch with NBM Properties to learn more about our quality ranch homes in Eastern Iowa."
+      />
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto mb-12 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>

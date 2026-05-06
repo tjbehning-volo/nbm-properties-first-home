@@ -5,6 +5,7 @@ import interior2 from "@/assets/interior-2.jpg";
 import interior3 from "@/assets/interior-3.jpg";
 import construction from "@/assets/construction.jpg";
 import iowaLandscape from "@/assets/iowa-landscape.jpg";
+import SEO from "@/components/SEO";
 
 const Photos = () => {
   const photoGallery = [

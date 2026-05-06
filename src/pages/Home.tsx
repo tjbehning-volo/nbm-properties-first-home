@@ -5,10 +5,15 @@ import { Link } from "react-router-dom";
 import ranchExterior from "@/assets/ranch-exterior.jpg";
 import iowaLandscape from "@/assets/iowa-landscape.jpg";
 import construction from "@/assets/construction.jpg";
+import SEO from "@/components/SEO";
 
 const Home = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="NBM Properties | Quality Ranch Homes in Eastern Iowa"
+        description="NBM Properties builds affordable, well-designed ranch homes for families and seniors in Eastern Iowa. Partnered with Nissen Builders."
+      />
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
         <div 
