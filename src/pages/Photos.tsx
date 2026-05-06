@@ -5,6 +5,7 @@ import interior2 from "@/assets/interior-2.jpg";
 import interior3 from "@/assets/interior-3.jpg";
 import construction from "@/assets/construction.jpg";
 import iowaLandscape from "@/assets/iowa-landscape.jpg";
+import SEO from "@/components/SEO";
 
 const Photos = () => {
   const photoGallery = [
@@ -18,6 +19,10 @@ const Photos = () => {
 
   return (
     <div className="min-h-screen py-20">
+      <SEO
+        title="Photo Gallery | NBM Properties"
+        description="Browse photos of our ranch home properties, construction process, and Eastern Iowa communities."
+      />
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto mb-12 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Photo Gallery</h1>

@@ -6,10 +6,15 @@ import { Link } from "react-router-dom";
 import ranchExterior from "@/assets/ranch-exterior.jpg";
 import livingRoomFireplace from "@/assets/living-room-fireplace.jpg";
 import interior2 from "@/assets/interior-2.jpg";
+import SEO from "@/components/SEO";
 
 const Properties = () => {
   return (
     <div className="min-h-screen py-20">
+      <SEO
+        title="Our Properties | NBM Properties"
+        description="Explore our thoughtfully designed ranch homes built for comfort, accessibility, and modern living in Eastern Iowa."
+      />
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto mb-12 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Properties</h1>
