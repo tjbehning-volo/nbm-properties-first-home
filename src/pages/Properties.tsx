@@ -5,7 +5,11 @@ import { Bed, Bath, Square, MapPin, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import ranchExterior from "@/assets/ranch-exterior.jpg";
 import livingRoomFireplace from "@/assets/living-room-fireplace.jpg";
-import interior2 from "@/assets/interior-2.jpg";
+import kitchen from "@/assets/interior-2.jpg";
+import masterBedroom from "@/assets/interior-3.jpg";
+import bathroom from "@/assets/locust-bathroom.jpg";
+import laundry from "@/assets/locust-laundry.jpg";
+import garage from "@/assets/locust-garage.jpg";
 import SEO from "@/components/SEO";
 
 const Properties = () => {
@@ -106,35 +110,60 @@ const Properties = () => {
 
         {/* Interior Preview */}
         <div className="mb-12">
-          <h2 className="text-3xl font-bold mb-6 text-center">Interior Spaces</h2>
+          <h2 className="text-3xl font-bold mb-6 text-center">Inside the Home</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="relative overflow-hidden rounded-lg group">
-              <img 
-                src={livingRoomFireplace} 
-                alt="Living Room with Fireplace" 
-                className="w-full h-80 object-cover transition-transform group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex items-end p-6">
-                <div>
-                  <h3 className="text-xl font-semibold mb-1">Cozy Living Room</h3>
-                  <p className="text-sm text-muted-foreground">Comfortable space with gas fireplace</p>
+            {[
+              {
+                src: livingRoomFireplace,
+                alt: "Living Room with Gas Fireplace",
+                title: "Living Room",
+                caption: "Tray ceiling with a cozy gas fireplace",
+              },
+              {
+                src: kitchen,
+                alt: "Kitchen",
+                title: "Kitchen",
+                caption: "White cabinetry, granite countertops, and stainless appliances",
+              },
+              {
+                src: masterBedroom,
+                alt: "Master Bedroom",
+                title: "Master Bedroom",
+                caption: "Spacious retreat with tray ceiling and walk-in closet",
+              },
+              {
+                src: bathroom,
+                alt: "Main Bathroom",
+                title: "Main Bathroom",
+                caption: "Bright vanity with tub and shower combination",
+              },
+              {
+                src: laundry,
+                alt: "Laundry Room",
+                title: "Laundry Room",
+                caption: "Custom upper cabinets with washer and dryer hookups",
+              },
+              {
+                src: garage,
+                alt: "Attached Garage",
+                title: "Two-Car Garage",
+                caption: "Spacious attached garage with opener included",
+              },
+            ].map((room) => (
+              <div key={room.title} className="relative overflow-hidden rounded-lg group">
+                <img 
+                  src={room.src} 
+                  alt={room.alt} 
+                  className="w-full h-80 object-cover transition-transform group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex items-end p-6">
+                  <div>
+                    <h3 className="text-xl font-semibold mb-1">{room.title}</h3>
+                    <p className="text-sm text-muted-foreground">{room.caption}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div className="relative overflow-hidden rounded-lg group">
-              <img 
-                src={interior2} 
-                alt="Kitchen" 
-                className="w-full h-80 object-cover transition-transform group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex items-end p-6">
-                <div>
-                  <h3 className="text-xl font-semibold mb-1">Modern Kitchen</h3>
-                  <p className="text-sm text-muted-foreground">Functional design with quality finishes</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
