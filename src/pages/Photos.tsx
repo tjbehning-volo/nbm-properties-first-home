@@ -1,18 +1,26 @@
 import { Card } from "@/components/ui/card";
-import heroHome from "@/assets/hero-home.jpg";
-import interior1 from "@/assets/interior-1.jpg";
-import interior2 from "@/assets/interior-2.jpg";
-import interior3 from "@/assets/interior-3.jpg";
+import ranchExterior from "@/assets/ranch-exterior.jpg";
+import livingRoomFireplace from "@/assets/living-room-fireplace.jpg";
+import kitchen from "@/assets/interior-2.jpg";
+import kitchenCorner from "@/assets/locust-kitchen-corner.jpg";
+import masterBedroom from "@/assets/interior-3.jpg";
+import bathroom from "@/assets/locust-bathroom.jpg";
+import laundry from "@/assets/locust-laundry.jpg";
+import garage from "@/assets/locust-garage.jpg";
 import construction from "@/assets/construction.jpg";
 import iowaLandscape from "@/assets/iowa-landscape.jpg";
 import SEO from "@/components/SEO";
 
 const Photos = () => {
   const photoGallery = [
-    { src: heroHome, title: "Exterior View", category: "Exterior" },
-    { src: interior1, title: "Living Space", category: "Interior" },
-    { src: interior2, title: "Modern Kitchen", category: "Interior" },
-    { src: interior3, title: "Master Bedroom", category: "Interior" },
+    { src: ranchExterior, title: "801 Locust St Exterior", category: "Exterior" },
+    { src: livingRoomFireplace, title: "Living Room with Gas Fireplace", category: "Interior" },
+    { src: kitchen, title: "Kitchen", category: "Interior" },
+    { src: kitchenCorner, title: "Kitchen Detail", category: "Interior" },
+    { src: masterBedroom, title: "Master Bedroom", category: "Interior" },
+    { src: bathroom, title: "Main Bathroom", category: "Interior" },
+    { src: laundry, title: "Laundry Room", category: "Interior" },
+    { src: garage, title: "Two-Car Garage", category: "Interior" },
     { src: construction, title: "Quality Construction", category: "Construction" },
     { src: iowaLandscape, title: "Eastern Iowa", category: "Location" },
   ];
