@@ -8,6 +8,8 @@ import livingRoomFireplace from "@/assets/living-room-fireplace.jpg";
 import kitchen from "@/assets/interior-2.jpg";
 import masterBedroom from "@/assets/interior-3.jpg";
 import bathroom from "@/assets/locust-bathroom.jpg";
+import masterBathVanity from "@/assets/locust-master-bath-vanity.jpg";
+import masterBathShower from "@/assets/locust-master-bath-shower.jpg";
 import laundry from "@/assets/locust-laundry.jpg";
 import garage from "@/assets/locust-garage.jpg";
 import SEO from "@/components/SEO";
@@ -136,6 +138,18 @@ const Properties = () => {
                 alt: "Main Bathroom",
                 title: "Main Bathroom",
                 caption: "Bright vanity with tub and shower combination",
+              },
+              {
+                src: masterBathVanity,
+                alt: "Master Bathroom Vanity",
+                title: "Master Bathroom",
+                caption: "Double vanity in the master suite",
+              },
+              {
+                src: masterBathShower,
+                alt: "Master Bath Shower and Closet",
+                title: "Master Bath & Closet",
+                caption: "Walk-in shower and spacious closet",
               },
               {
                 src: laundry,

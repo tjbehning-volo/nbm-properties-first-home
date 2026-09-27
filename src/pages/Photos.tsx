@@ -5,6 +5,8 @@ import kitchen from "@/assets/interior-2.jpg";
 import kitchenCorner from "@/assets/locust-kitchen-corner.jpg";
 import masterBedroom from "@/assets/interior-3.jpg";
 import bathroom from "@/assets/locust-bathroom.jpg";
+import masterBathVanity from "@/assets/locust-master-bath-vanity.jpg";
+import masterBathShower from "@/assets/locust-master-bath-shower.jpg";
 import laundry from "@/assets/locust-laundry.jpg";
 import garage from "@/assets/locust-garage.jpg";
 import construction from "@/assets/construction.jpg";
@@ -19,6 +21,8 @@ const Photos = () => {
     { src: kitchenCorner, title: "Kitchen Detail", category: "Interior" },
     { src: masterBedroom, title: "Master Bedroom", category: "Interior" },
     { src: bathroom, title: "Main Bathroom", category: "Interior" },
+    { src: masterBathVanity, title: "Master Bathroom Vanity", category: "Interior" },
+    { src: masterBathShower, title: "Master Bath Shower & Closet", category: "Interior" },
     { src: laundry, title: "Laundry Room", category: "Interior" },
     { src: garage, title: "Two-Car Garage", category: "Interior" },
     { src: construction, title: "Quality Construction", category: "Construction" },
