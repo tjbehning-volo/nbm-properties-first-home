@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const SITE_URL = "https://nbmhomes.com";
+const OG_IMAGE = "https://nbmhomes.com/og-image.jpg";
 
 interface SEOProps {
   title: string;
