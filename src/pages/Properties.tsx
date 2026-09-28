@@ -125,7 +125,7 @@ const Properties = () => {
                 src: kitchen,
                 alt: "Kitchen",
                 title: "Kitchen",
-                caption: "White cabinetry, granite countertops, and stainless appliances",
+                caption: "White cabinetry and granite countertops",
               },
               {
                 src: masterBedroom,

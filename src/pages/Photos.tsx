@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
-import { ChevronLeft, ChevronLeftIcon, X } from "lucide-react";
+import { ChevronLeft, X } from "lucide-react";
 import ranchExterior from "@/assets/ranch-exterior.jpg";
 import frontAngle from "@/assets/locust-front-angle.jpg";
 import rear from "@/assets/locust-rear.jpg";
