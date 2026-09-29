@@ -68,7 +68,7 @@ const Properties = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <Square className="w-5 h-5 text-primary" />
-                    <span className="font-semibold">8,000 sq ft Corner Lot</span>
+                    <span className="font-semibold">8,520 sq ft Corner Lot</span>
                   </div>
                 </div>
 
@@ -85,7 +85,7 @@ const Properties = () => {
                   {[
                     "Single-level living with no stairs",
                     "Semi-open concept kitchen and living area",
-                    "Spacious 8,000 sq ft corner lot",
+                    "Spacious 8,520 sq ft corner lot",
                     "Master suite with walk-in closet",
                     "Energy-efficient construction",
                     "Attached two-car garage",
