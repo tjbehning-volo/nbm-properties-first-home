@@ -1,7 +1,8 @@
+import { useCallback, useEffect, useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Bed, Bath, Square, MapPin, CheckCircle } from "lucide-react";
+import { Bed, Bath, Square, MapPin, CheckCircle, ChevronLeft, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import ranchExterior from "@/assets/ranch-exterior.jpg";
 import livingRoomFireplace from "@/assets/living-room-fireplace.jpg";
@@ -15,6 +16,87 @@ import garage from "@/assets/locust-garage.jpg";
 import SEO from "@/components/SEO";
 
 const Properties = () => {
+  const rooms = [
+    {
+      src: livingRoomFireplace,
+      alt: "Living Room with Gas Fireplace",
+      title: "Living Room",
+      caption: "Tray ceiling with a cozy gas fireplace",
+    },
+    {
+      src: kitchen,
+      alt: "Kitchen",
+      title: "Kitchen",
+      caption: "White cabinetry and granite countertops",
+    },
+    {
+      src: masterBedroom,
+      alt: "Master Bedroom",
+      title: "Master Bedroom",
+      caption: "Spacious retreat with tray ceiling and walk-in closet",
+    },
+    {
+      src: bathroom,
+      alt: "Main Bathroom",
+      title: "Main Bathroom",
+      caption: "Bright vanity with tub and shower combination",
+    },
+    {
+      src: masterBathVanity,
+      alt: "Master Bathroom Vanity",
+      title: "Master Bathroom",
+      caption: "Double vanity in the master suite",
+    },
+    {
+      src: masterBathShower,
+      alt: "Master Bath Shower and Closet",
+      title: "Master Bath & Closet",
+      caption: "Walk-in shower and spacious closet",
+    },
+    {
+      src: laundry,
+      alt: "Laundry Room",
+      title: "Laundry Room",
+      caption: "Custom upper cabinets with washer and dryer hookups",
+    },
+    {
+      src: garage,
+      alt: "Attached Garage",
+      title: "Two-Car Garage",
+      caption: "Spacious attached garage with opener included",
+    },
+  ];
+
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const isOpen = lightboxIndex !== null;
+
+  const showPrev = useCallback(() => {
+    setLightboxIndex((i) => (i === null ? null : (i - 1 + rooms.length) % rooms.length));
+  }, [rooms.length]);
+
+  const showNext = useCallback(() => {
+    setLightboxIndex((i) => (i === null ? null : (i + 1) % rooms.length));
+  }, [rooms.length]);
+
+  const close = useCallback(() => setLightboxIndex(null), []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") showPrev();
+      else if (e.key === "ArrowRight") showNext();
+      else if (e.key === "Escape") close();
+    };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [isOpen, showPrev, showNext, close]);
+
+  const activeRoom = isOpen ? rooms[lightboxIndex!] : null;
+
   return (
     <div className="min-h-screen py-20">
       <SEO
@@ -68,7 +150,7 @@ const Properties = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <Square className="w-5 h-5 text-primary" />
-                    <span className="font-semibold">8,000 sq ft Corner Lot</span>
+                    <span className="font-semibold">8,520 sq ft Corner Lot</span>
                   </div>
                 </div>
 
@@ -85,7 +167,7 @@ const Properties = () => {
                   {[
                     "Single-level living with no stairs",
                     "Semi-open concept kitchen and living area",
-                    "Spacious 8,000 sq ft corner lot",
+                    "Spacious 8,520 sq ft corner lot",
                     "Master suite with walk-in closet",
                     "Energy-efficient construction",
                     "Attached two-car garage",
@@ -114,60 +196,18 @@ const Properties = () => {
         <div className="mb-12">
           <h2 className="text-3xl font-bold mb-6 text-center">Inside the Home</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                src: livingRoomFireplace,
-                alt: "Living Room with Gas Fireplace",
-                title: "Living Room",
-                caption: "Tray ceiling with a cozy gas fireplace",
-              },
-              {
-                src: kitchen,
-                alt: "Kitchen",
-                title: "Kitchen",
-                caption: "White cabinetry and granite countertops",
-              },
-              {
-                src: masterBedroom,
-                alt: "Master Bedroom",
-                title: "Master Bedroom",
-                caption: "Spacious retreat with tray ceiling and walk-in closet",
-              },
-              {
-                src: bathroom,
-                alt: "Main Bathroom",
-                title: "Main Bathroom",
-                caption: "Bright vanity with tub and shower combination",
-              },
-              {
-                src: masterBathVanity,
-                alt: "Master Bathroom Vanity",
-                title: "Master Bathroom",
-                caption: "Double vanity in the master suite",
-              },
-              {
-                src: masterBathShower,
-                alt: "Master Bath Shower and Closet",
-                title: "Master Bath & Closet",
-                caption: "Walk-in shower and spacious closet",
-              },
-              {
-                src: laundry,
-                alt: "Laundry Room",
-                title: "Laundry Room",
-                caption: "Custom upper cabinets with washer and dryer hookups",
-              },
-              {
-                src: garage,
-                alt: "Attached Garage",
-                title: "Two-Car Garage",
-                caption: "Spacious attached garage with opener included",
-              },
-            ].map((room) => (
-              <div key={room.title} className="relative overflow-hidden rounded-lg group">
-                <img 
-                  src={room.src} 
-                  alt={room.alt} 
+            {rooms.map((room, index) => (
+              <button
+                key={room.title}
+                type="button"
+                aria-label={`View larger: ${room.title}`}
+                onClick={() => setLightboxIndex(index)}
+                className="relative overflow-hidden rounded-lg group text-left cursor-pointer"
+              >
+                <img
+                  src={room.src}
+                  alt={room.alt}
+                  loading="lazy"
                   className="w-full h-80 object-cover transition-transform group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex items-end p-6">
@@ -176,7 +216,7 @@ const Properties = () => {
                     <p className="text-sm text-muted-foreground">{room.caption}</p>
                   </div>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>
@@ -223,6 +263,53 @@ const Properties = () => {
           </Button>
         </div>
       </div>
+
+      {isOpen && activeRoom && (
+        <div
+          className="fixed inset-0 z-50 bg-background/95 flex items-center justify-center"
+          onClick={close}
+          role="dialog"
+          aria-modal="true"
+          aria-label={activeRoom.title}
+        >
+          <button
+            aria-label="Close viewer"
+            className="absolute top-4 right-4 p-2 rounded-full bg-muted/80 hover:bg-muted transition-colors"
+            onClick={close}
+          >
+            <X className="h-6 w-6" />
+          </button>
+
+          <button
+            aria-label="Previous photo"
+            className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full bg-muted/80 hover:bg-muted transition-colors"
+            onClick={(e) => { e.stopPropagation(); showPrev(); }}
+          >
+            <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
+          </button>
+          <button
+            aria-label="Next photo"
+            className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full bg-muted/80 hover:bg-muted transition-colors"
+            onClick={(e) => { e.stopPropagation(); showNext(); }}
+          >
+            <ChevronLeft className="h-6 w-6 md:h-8 md:w-8 rotate-180" />
+          </button>
+
+          <figure className="max-w-5xl w-full mx-12 md:mx-24" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={activeRoom.src}
+              alt={activeRoom.alt}
+              className="w-full max-h-[78vh] object-contain rounded-lg shadow-2xl"
+            />
+            <figcaption className="mt-4 text-center">
+              <h3 className="text-lg font-semibold">{activeRoom.title}</h3>
+              <p className="text-sm text-muted-foreground mt-1">
+                {lightboxIndex! + 1} of {rooms.length}
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      )}
     </div>
   );
 };
