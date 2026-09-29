@@ -196,60 +196,18 @@ const Properties = () => {
         <div className="mb-12">
           <h2 className="text-3xl font-bold mb-6 text-center">Inside the Home</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                src: livingRoomFireplace,
-                alt: "Living Room with Gas Fireplace",
-                title: "Living Room",
-                caption: "Tray ceiling with a cozy gas fireplace",
-              },
-              {
-                src: kitchen,
-                alt: "Kitchen",
-                title: "Kitchen",
-                caption: "White cabinetry and granite countertops",
-              },
-              {
-                src: masterBedroom,
-                alt: "Master Bedroom",
-                title: "Master Bedroom",
-                caption: "Spacious retreat with tray ceiling and walk-in closet",
-              },
-              {
-                src: bathroom,
-                alt: "Main Bathroom",
-                title: "Main Bathroom",
-                caption: "Bright vanity with tub and shower combination",
-              },
-              {
-                src: masterBathVanity,
-                alt: "Master Bathroom Vanity",
-                title: "Master Bathroom",
-                caption: "Double vanity in the master suite",
-              },
-              {
-                src: masterBathShower,
-                alt: "Master Bath Shower and Closet",
-                title: "Master Bath & Closet",
-                caption: "Walk-in shower and spacious closet",
-              },
-              {
-                src: laundry,
-                alt: "Laundry Room",
-                title: "Laundry Room",
-                caption: "Custom upper cabinets with washer and dryer hookups",
-              },
-              {
-                src: garage,
-                alt: "Attached Garage",
-                title: "Two-Car Garage",
-                caption: "Spacious attached garage with opener included",
-              },
-            ].map((room) => (
-              <div key={room.title} className="relative overflow-hidden rounded-lg group">
-                <img 
-                  src={room.src} 
-                  alt={room.alt} 
+            {rooms.map((room, index) => (
+              <button
+                key={room.title}
+                type="button"
+                aria-label={`View larger: ${room.title}`}
+                onClick={() => setLightboxIndex(index)}
+                className="relative overflow-hidden rounded-lg group text-left cursor-pointer"
+              >
+                <img
+                  src={room.src}
+                  alt={room.alt}
+                  loading="lazy"
                   className="w-full h-80 object-cover transition-transform group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex items-end p-6">
@@ -258,7 +216,7 @@ const Properties = () => {
                     <p className="text-sm text-muted-foreground">{room.caption}</p>
                   </div>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>
