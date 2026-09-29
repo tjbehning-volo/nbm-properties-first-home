@@ -263,6 +263,53 @@ const Properties = () => {
           </Button>
         </div>
       </div>
+
+      {isOpen && activeRoom && (
+        <div
+          className="fixed inset-0 z-50 bg-background/95 flex items-center justify-center"
+          onClick={close}
+          role="dialog"
+          aria-modal="true"
+          aria-label={activeRoom.title}
+        >
+          <button
+            aria-label="Close viewer"
+            className="absolute top-4 right-4 p-2 rounded-full bg-muted/80 hover:bg-muted transition-colors"
+            onClick={close}
+          >
+            <X className="h-6 w-6" />
+          </button>
+
+          <button
+            aria-label="Previous photo"
+            className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full bg-muted/80 hover:bg-muted transition-colors"
+            onClick={(e) => { e.stopPropagation(); showPrev(); }}
+          >
+            <ChevronLeft className="h-6 w-6 md:h-8 md:w-8" />
+          </button>
+          <button
+            aria-label="Next photo"
+            className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full bg-muted/80 hover:bg-muted transition-colors"
+            onClick={(e) => { e.stopPropagation(); showNext(); }}
+          >
+            <ChevronLeft className="h-6 w-6 md:h-8 md:w-8 rotate-180" />
+          </button>
+
+          <figure className="max-w-5xl w-full mx-12 md:mx-24" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={activeRoom.src}
+              alt={activeRoom.alt}
+              className="w-full max-h-[78vh] object-contain rounded-lg shadow-2xl"
+            />
+            <figcaption className="mt-4 text-center">
+              <h3 className="text-lg font-semibold">{activeRoom.title}</h3>
+              <p className="text-sm text-muted-foreground mt-1">
+                {lightboxIndex! + 1} of {rooms.length}
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      )}
     </div>
   );
 };
