@@ -1,7 +1,8 @@
+import { useCallback, useEffect, useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Bed, Bath, Square, MapPin, CheckCircle } from "lucide-react";
+import { Bed, Bath, Square, MapPin, CheckCircle, ChevronLeft, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import ranchExterior from "@/assets/ranch-exterior.jpg";
 import livingRoomFireplace from "@/assets/living-room-fireplace.jpg";
@@ -15,6 +16,87 @@ import garage from "@/assets/locust-garage.jpg";
 import SEO from "@/components/SEO";
 
 const Properties = () => {
+  const rooms = [
+    {
+      src: livingRoomFireplace,
+      alt: "Living Room with Gas Fireplace",
+      title: "Living Room",
+      caption: "Tray ceiling with a cozy gas fireplace",
+    },
+    {
+      src: kitchen,
+      alt: "Kitchen",
+      title: "Kitchen",
+      caption: "White cabinetry and granite countertops",
+    },
+    {
+      src: masterBedroom,
+      alt: "Master Bedroom",
+      title: "Master Bedroom",
+      caption: "Spacious retreat with tray ceiling and walk-in closet",
+    },
+    {
+      src: bathroom,
+      alt: "Main Bathroom",
+      title: "Main Bathroom",
+      caption: "Bright vanity with tub and shower combination",
+    },
+    {
+      src: masterBathVanity,
+      alt: "Master Bathroom Vanity",
+      title: "Master Bathroom",
+      caption: "Double vanity in the master suite",
+    },
+    {
+      src: masterBathShower,
+      alt: "Master Bath Shower and Closet",
+      title: "Master Bath & Closet",
+      caption: "Walk-in shower and spacious closet",
+    },
+    {
+      src: laundry,
+      alt: "Laundry Room",
+      title: "Laundry Room",
+      caption: "Custom upper cabinets with washer and dryer hookups",
+    },
+    {
+      src: garage,
+      alt: "Attached Garage",
+      title: "Two-Car Garage",
+      caption: "Spacious attached garage with opener included",
+    },
+  ];
+
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const isOpen = lightboxIndex !== null;
+
+  const showPrev = useCallback(() => {
+    setLightboxIndex((i) => (i === null ? null : (i - 1 + rooms.length) % rooms.length));
+  }, [rooms.length]);
+
+  const showNext = useCallback(() => {
+    setLightboxIndex((i) => (i === null ? null : (i + 1) % rooms.length));
+  }, [rooms.length]);
+
+  const close = useCallback(() => setLightboxIndex(null), []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") showPrev();
+      else if (e.key === "ArrowRight") showNext();
+      else if (e.key === "Escape") close();
+    };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [isOpen, showPrev, showNext, close]);
+
+  const activeRoom = isOpen ? rooms[lightboxIndex!] : null;
+
   return (
     <div className="min-h-screen py-20">
       <SEO
